@@ -35,7 +35,7 @@
 .field-ting-refs{ padding:20px 0 0 0px; width: 650px;}
 	.field-ting-refs ul li{background:transparent url(../images/bg-divider.png) no-repeat left top; margin:0 0 20px 0px;  padding:10px 0 10px 10px; list-style-position: outside; clear:both; }
 	.field-ting-refs div.picture{float:left; background:#ddd; width:80px; margin:0 12px 0 0; line-height:0;}
-	.field-ting-refs div.record{margin-left:92px; width:525px;}
+	.field-ting-refs div.record{margin-left:92px; width:405px;}
 	.field-ting-refs h4{display:inline;}
 	.field-ting-refs span{font-weight: bold;}
 	.field-ting-refs .types{float: right;}
@@ -43,10 +43,10 @@
 		.field-ting-refs .types li, .types li{font-size: 10px; padding:1px 3px; color: #fff; margin: 1px}
 		.field-ting-refs .types li.available,.types li.available{background-color:#71bf44; color:#fff;}
 		.field-ting-refs .types li.out,.types li.out{background-color: #f85f26; color:#fff;}
-		.field-ting-refs .types li.reserved,ul.types li.reserved{ background-color: #560036; /*#bc0028*/ color:#fff;}
-
+		.field-ting-refs .types li.reserved,ul.types li.reserved{ background-color: #560036; /*#bc0028*/ color:#fff;}	
+		
 		.field-ting-refs .subjects li{clear:none; display:inline; float:left; margin:0 10px 0 0; padding:0; background:none; }
-		.field-ting-refs .subjects h4{float: left; margin: 0 10px 0 0; font-size: 10px; color:#bbb;}
+		.field-ting-refs .subjects h4{float: left; margin: 0 10px 0 0; font-size: 10px; }
 		.field-ting-refs .subjects li{display:inline; font-size: 10px; color:#bbb;}
 .field-ting-refs .subjects ul { clear:none; } /* overskriv ".node .content ul" i stylec.css  */
 ul.field-ting-refs { margin:0 ! important ; padding: 0 ! important; }
@@ -61,7 +61,7 @@ ul.field-ting-refs li { clear:both; margin:0 0 20px 0; padding:10px 0 10px 10px;
 #ting-search-legend .available{color:#71bf44; }
 #ting-search-legend .out{color: #f85f26; }
 #ting-search-legend .reserved{ color: #560036; }
-#ting-search-summary, #content-search-summary { color: #666; margin-top: 20px; font-size: 11px; font-family: verdana; margin-left: 5px; }
+#ting-search-summary, #content-search-summary { color: #666; margin-top: 30px; font-size: 11px; font-family: verdana; margin-left: 5px; }
 #ting-search-summary span, #content-search-summary span { font-weight: bold; }
 
 
@@ -136,98 +136,85 @@ iframe.pc-booking { width: 100%; height: 100%; min-height: 600px;}
 }
 
 
-/* Jesper K: låner status side */
-.pane-ding_reservation_list_form .col-selection,
-.pane-ding_booking_list .col-selection,
-.pane-ding_library_user_loan_list_form .col-selection,
-.pane-ding_debt_list_form .col-selection { width: 35px; }
+/* Jesper K: alma låner status side */
+.pane-alma_user_reservations_details .col-selection,
+.pane-alma_user_loans_details .col-selection,
+.pane-alma_user_debts_details .col-selection { width: 35px; }
 
-.pane-ding_reservation_list_form .col-image,
-.pane-ding_booking_list_form .col-image,
-.pane-ding_library_user_loan_list_form .col-image { width: 35px; }
+.pane-alma_user_reservations_details .col-image,
+.pane-alma_user_loans_details .col-image { width: 35px; }
 
-.pane-ding_reservation_list_form .col-reservation,
-.pane-ding_reservation_list_form .col-valied-to,
-.pane-ding_reservation_list_form .col-pickup-by,
-.pane-ding_booking_list_form .col-start-date,
-.pane-ding_booking_list_form .col-end-date,
-.pane-ding_library_user_loan_list_form .col-loan-date,
-.pane-ding_library_user_loan_list_form .col-due-date,
-.pane-ding_debt_list_form .col-date { width: 70px;}
+.pane-alma_user_reservations_details .col-reservation,
+.pane-alma_user_reservations_details .col-valied-to,
+.pane-alma_user_reservations_details .col-pickup-by,
+.pane-alma_user_loans_details .col-loan-date,
+.pane-alma_user_loans_details .col-due-date,
+.pane-alma_user_debts_details .col-date { width: 70px;}
 
-.pane-ding_reservation_list_form .col-pickup-branch { width: 100px;}
-.pane-ding_reservation_list_form .col-queue-number { width: 70px;}
-.pane-ding_reservation_list_form .col-pickup-number { width: 30px;}
+.pane-alma_user_reservations_details .col-pickup-branch { width: 100px;}
+.pane-alma_user_reservations_details .col-queue-number { width: 70px;}
+.pane-alma_user_reservations_details .col-pickup-number { width: 30px;}
 
-
-.pane-ding_booking_list_form .col-pickup-branch { width: 100px;}
-
-.pane-ding_debt_list_form .col-amount { width: 60px;}
-.pane-ding_debt_list_form td.amount {
+.pane-alma_user_debts_details .col-amount { width: 60px;}
+.pane-alma_user_debts_details td.amount {
   text-align: right;
   padding-right: 4px;
 }
 
-.pane-ding_debt_list_form td.note,
-.pane-ding_debt_list_form td.date {
+.pane-alma_user_debts_details td.note,
+.pane-alma_user_debts_details td.date {
   padding-right: 16px;
 }
 
-#ding-debt-list-form td .form-item {
+#alma-user-forms-debts-details td .form-item {
   margin:0;
   padding:0;
 }
 
-#ding-debt-list-form tbody td {
+#alma-user-forms-debts-details tbody td {
   border-bottom:1px solid #D1D9D7;
   padding:5px;
 }
 
-.pane-ding_reservation_list_form td.queue_no,
-.pane-ding_booking_list_form td.count {
+.pane-alma_user_reservations_details td.queue_no {
   text-align: right;
   padding-right: 4px;
 }
 
-.pane-ding_reservation_list_form td.pickup_expire_date {
+.pane-alma_user_reservations_details td.pickup_expire_date {
   text-align: right;
   padding-right: 4px;
 }
 
-.pane-ding_library_user_loan_list_form table caption,
-.pane-ding_booking_list_form table caption,
-.pane-ding_reservation_list_form table caption {
+.pane-alma_user_loans_details table caption,
+.pane-alma_user_reservations_details table caption {
   font-size: 14px;
   line-height: 20px;
   padding: 5px 0 5px 0;
   text-align: left;
-  color:#790f21;
+  color:#212121;
 }
 
-.pane-ding_library_user_loan_list_form table,
-.pane-ding_booking_list_form table,
-.pane-ding_reservation_list_form table { margin-bottom: 16px; }
+.pane-alma_user_loans_details table,
+.pane-alma_user_reservations_details table { margin-bottom: 16px; }
 
-.pane-ding_reservation_list_form h3,
-.pane-ding_booking_list_form h3,
-.pane-ding_library_user_loan_list_form h3{ color: #790f21;}
-.pane-ding_reservation_list_form h3,
-.pane-ding_booking_list_form h3 { padding-top: 25px; }
+.pane-alma_user_reservations_details h3, .pane-alma_user_loans_details h3{ color: #212121; font-size: 18px; font-weight:bold;}
+.pane-alma_user_reservations_details h3 { padding-top: 25px; }
 
-.pane-ding_reservation_list_form .update-controls-button .edit-update{
+.pane-alma_user_reservations_details .update-controls-button .edit-update{
   height: 25px;
   margin-right: 24px;
   float: left;
   clear: none;
 }
 
-.pane-ding_reservation_list_form .update-controls-button .edit-remove{
+.pane-alma_user_reservations_details .update-controls-button .edit-remove{
   height: 25px;
   float: left;
   clear: none;
 }
 
-.pane-ding_reservation_list_form .update-controls-button .edit-remove #edit-remove {
+.pane-alma_user_reservations_details .update-controls-button .edit-remove #edit-remove {
   border: 0;
   background-color: #FFF;
   height: 24px;
@@ -237,20 +224,11 @@ iframe.pc-booking { width: 100%; height: 100%; min-height: 600px;}
   background: transparent url('../images/trash.png') no-repeat 0 50%;
 }
 
-#ding-library-user-loan-list-form td.image,
-#ding-reservation-list-form td.image {
+#alma-user-forms-loan-details td.image,
+#alma-user-forms-reservation-details td.image {
   overflow: hidden;
   text-align: center;
 }
-
-/** fini: bookings **/
-#ding-booking-list-form table{font-size:11px; width: 680px;}
-#ding-booking-list-form table tbody td{border-bottom: 1px solid #eee; padding:5px;}
-#ding-booking-list-form td.image img{ width:20px; overflow:hidden;}
-
-#ding-booking-list-form .start_date,
-#ding-booking-list-form .end_date { white-space: nowrap; }
-
 
 /** mikl: Login form in jQuery UI dialog **/
 .ui-dialog #user-login-form {
@@ -265,13 +243,23 @@ iframe.pc-booking { width: 100%; height: 100%; min-height: 600px;}
 
 /** Restore list styling in body content. **/
 .ding-node .content ol li {
-  list-style-type: decimal;
-  margin-left: 2em;
+  list-style-type: none;
+
 }
 
 .ding-node .content ul li {
   list-style-type: disc;
-  margin-left: 2em;
+  padding: 1px;
+
+}
+
+.node-type-library ul { margin:0 0 0px 0px; }
+
+.node-type-library ul li {
+  list-style-type: disc;
+  padding: 1px;
+ 
+
 }
 
 /** Bold font for teasers on node page. **/
@@ -279,8 +267,70 @@ body.page-node .ding-node .field-teaser {
   font-weight: bold;
 }
 
-/** Event metadata **/
-.node-event .meta div {
-  display: inline;
+
+/** Fikse delete location checkbox **/
+.location #edit-locations-0-delete-location {
+  display:block;
+  margin-bottom :5px;
+  width :200px;
 }
 
+#edit-locations-0-delete-location-wrapper .form-description 
+{
+    position:static;
+}
+
+/** Forside billeder **/
+
+#frontpage_teaser_img {margin-top:8px;}
+#frontpage_teaser_img img {margin-right:20px;}
+
+/** Pressearkiv **/
+#pressearkiv table {margin: 0 0 !important;}
+
+/** Node Editor **/
+#edit-teaser-include-wrapper {display: none;}
+#field-content-images-items {margin-top: 10px; padding-bottom:20px; background-color:#EFEFEF;} 
+#field-ting-refs-items {margin-top: 10px; padding-bottom:20px; background-color:#EFEFEF;} 
+#field-file-attachments-items {margin-top: 10px; padding-bottom:20px; background-color:#D7EDE6;}
+#field-file-attachments-items tr.odd {background-color:#D7EDE6;}
+#edit-field-list-image-0-upload-wrapper {margin-top: 10px; background-color:#D7EDE6;}
+#edit-field-list-image-0-ahah-wrapper {margin-top: 10px;}
+
+/** Vedhæftede filer**/
+.node .field-file-attachments a{display:block; margin:0 0 10px 0;font-weight:normal}
+.node .field-file-attachments  a img{margin:0; padding:0 10px 0; background:transparent; }
+
+/** Bogbider **/
+#bogbidder div.book-snippet > div > img {width:480px;}
+#bogbidder div.stx > ul.links {width:400px !important;}
+#bogbidder {overflow:hidden;}
+
+/** Oversider **/
+
+.overpage_box {width: 228px; min-height:128px; background:transparent url(../images/randers/white_box.png) no-repeat left top; padding:4px 6px 4px 4px;}
+.overpage_box img {float: left;}
+.overpage_box a {color:#000000; font-weight:bold;}
+.overpage_box_even {float:right;}
+.overpage_box_odd {float:left;}
+.overpage_infoboxes {overflow:hidden;}
+.overpage_text {clear: both;}
+
+
+/** Pinkode side **/
+
+.user-change-pin #content-main {margin-left: 17px;}
+
+/** Blogposter side **/
+.ding-taxonomy li a.active {color:#FA4696;}
+
+/** Aktiviteter venstre stillede billeder **/
+
+.node-event > .meta {clear:both;}
+
+/** Editor felt **/
+
+#edit-body-wrapper {width: 510px;}
+
+/** Bloglist på user pages **/
+.ding-user .pane-article_list-panel_pane_1 div.picture {float:left; margin-right:20px;}

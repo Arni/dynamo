@@ -74,6 +74,13 @@ if ($page == 0){ ?>
 		<?php  print $content ?>
 	</div>
 
+            <?php if ($similarterms) { ?>
+    <div class="ding-box-wide similar">
+      <h3><?php print t('Similar'); ?></h3>
+      <?php print $similarterms; ?>
+    </div>
+    <?php } ?>
+
 	<?php if (count($taxonomy)){ ?>
 
 	  <div class="taxonomy">
@@ -81,14 +88,6 @@ if ($page == 0){ ?>
 	  </div>  
 	<?php } ?>
 		
-
-  <?php if ($similarterms) { ?>
-    <div class="ding-box-wide similar">
-      <h3><?php print t('Similar'); ?></h3>
-      <?php print $similarterms; ?>
-    </div>
-  <?php } ?>
-
 
 	<?php if ($links){ ?>
     <?php  print $links; ?>

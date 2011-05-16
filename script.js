@@ -33,6 +33,17 @@ $(document).ready(function() {
      });
 	}
 
+   //Recommendation pane
+    if($('#recommendation')){
+    $('#recommendation').jcarousel({
+       vertical: false, //
+       scroll: 4, //amount of items to scroll by
+       animation: "slow", // slow - fast
+       auto: "0", //autoscroll in secunds
+       wrap: "last"
+     });
+	}
+
 });
 
 

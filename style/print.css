@@ -3,3 +3,26 @@
 .pane-relevant_campaigns {
   display: none;
 }
+
+#content,
+#content div {
+  float: none !important;
+}
+
+/* Make user loan status more printable. */
+#ding-library-user-loan-list-form table,
+#ding-reservation-list-form table{
+font-size:140%;
+  width: 100%;
+}
+#ding-library-user-loan-list-form table a {font-size: 18px;}
+#ding-reservation-list-form table a {font-size: 18px;}
+
+body.ding-status .panel-twocol-left-stacked .panel-left {
+  width: 100%;
+}
+
+.panel-twocol-left-stacked .content-left {
+  width: 90%;
+}
+

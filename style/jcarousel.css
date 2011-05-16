@@ -49,7 +49,7 @@ similar events
 
 /** Horizontal  */
 .jcarousel-skin-events .jcarousel-container-horizontal {}
-.jcarousel-skin-events .jcarousel-clip-horizontal {width: 580px; height:180px; padding:10px 20px 0 0px; }
+.jcarousel-skin-events .jcarousel-clip-horizontal {width: 580px; height:190px; padding:10px 20px 0 0px; }
 
 .jcarousel-skin-events .jcarousel-next-horizontal{position: absolute; top: 75px; right: -20px; width: 35px; height: 35px; cursor: pointer; background: transparent url(../images/knapper.png) no-repeat 0 -35px;}
 	.jcarousel-skin-events .jcarousel-next-horizontal:hover {background-position: -35px -35px;}
@@ -66,3 +66,36 @@ similar events
 	.jcarousel-skin-events .jcarousel-prev-disabled-horizontal:active {cursor: default; background-position: -105px 0;}
 
 .jcarousel-skin-events{font-size:11px;}
+
+
+/* =====================================
+Recommondation
+/*--------------------------------------*/
+/*here we gogo */
+.jcarousel-skin-recommendation{width:470px; padding-left:10px;}
+.jcarousel-skin-recommendation.jcarousel-container{width: 470px; height:199px; margin:0 auto;} 
+.jcarousel-skin-recommendation.jcarousel-item {width: 140px;height: 200px; margin:0 5px;}
+
+/** Horizontal  */
+.jcarousel-skin-recommendation.jcarousel-container-horizontal {}
+.jcarousel-skin-recommendation .jcarousel-clip-horizontal {width: 456px; height:auto; padding:10px 0px 0 0px; }
+
+.jcarousel-skin-recommendation .jcarousel-next-horizontal{position: absolute; top: 75px; right: -20px; width: 35px; height: 35px; cursor: pointer; background: transparent url(../images/knapper.png) no-repeat 0 -35px;}
+	.jcarousel-skin-recommendation .jcarousel-next-horizontal:hover {background-position: -35px -35px;}
+	.jcarousel-skin-recommendation .jcarousel-next-horizontal:active {background-position: -70px -35px;}
+	.jcarousel-skin-recommendation .jcarousel-next-disabled-horizontal,
+	.jcarousel-skin-recommendation.jcarousel-next-disabled-horizontal:hover,
+	.jcarousel-skin-recommendation .jcarousel-next-disabled-horizontal:active {cursor: default; background-position: -105px -35px;}
+
+.jcarousel-skin-recommendation .jcarousel-prev-horizontal {position: absolute; top: 75px; left: -40px; width: 35px; height: 35px; cursor: pointer; background: transparent url(../images/knapper.png) no-repeat 0 0;}
+	.jcarousel-skin-recommendation.jcarousel-prev-horizontal:hover {background-position: -35px 0;}
+	.jcarousel-skin-recommendation .jcarousel-prev-horizontal:active {background-position: -70px 0;}
+	.jcarousel-skin-recommendation .jcarousel-prev-disabled-horizontal,
+	.jcarousel-skin-recommendation .jcarousel-prev-disabled-horizontal:hover,
+	.jcarousel-skin-recommendation .jcarousel-prev-disabled-horizontal:active {cursor: default; background-position: -105px 0;}
+
+.jcarousel-skin-recommendation{font-size:11px;}
+.jcarousel-skin-recommendation .creator{font-size:10px; display:block; text-transform:none;}
+.jcarousel-skin-recommendation .title{font-size:10px; display:block; text-transform:none;}
+.jcarousel-skin-recommendation ul li.jcarousel-item {float: left;list-style: none; width: 114px;height: auto; margin:0 0px; padding:2px 0 0 0px; background-color:#FFFFFF;}
+.jcarousel-skin-recommendation li.jcarousel-item #recommendation-link {background:none; padding-left:0px;}

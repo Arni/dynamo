@@ -1,17 +1,30 @@
-ul.menu li.leaf {margin :0 0 0 35px;}
+ul.menu li.leaf {margin :0 0 0 0px;}
+.menu-name-primary-links ul.menu li.collapsed{padding: 7px 0 7px 0px; }
+.menu-name-primary-links ul.menu li.expanded{padding: 7px 0 7px 0px; }
+.menu-name-primary-links ul.menu li.expanded ul.menu {margin:5px 0 0 32px;}
+.menu-name-primary-links ul.menu li.expanded ul.menu li.expanded a.active-trail {padding-left:0px;}
+.menu-name-primary-links ul.menu li.expanded ul.menu li.collapsed a{display:block; color:#444444; font-size:12px; font-weight:bold; padding-left:0px;}
+
 .panel-left ul.menu li ul li.first{padding:0 0 0 0;margin:0 0 0 35px;}
 
+.ding-front-panel #event-list h3 {height:auto;}
+.ding-front-panel .view .feed-icon {display:inline;}
+.ding-front-panel #view-bottom .view-footer p {display:inline;}
+
+.panel-left ul.item-list li {background:none #e3e3e3;}
+
 /*carousel*/
-.ting-search-carousel .search-results {}
-.ting-search-carousel {left:-20px}
+.ting-search-carousel .search-results {overflow:hidden;}
+
 .ting-search-carousel .subtitle {
 float:left;
 padding:0 0 0 20px;
-margin:15px 0 0 15px;
+margin:10px 0 0 15px;
 width:220px;
-height:200px;
+
 overflow:hidden;
 
 }
 
-.jcarousel-skin-ting-search-carousel{width:670px;}
+.ting-search-carousel ul.search-results li {height:197px;}
+.jcarousel-skin-ting-search-carousel{width:670px; height:198px}

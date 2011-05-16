@@ -17,6 +17,7 @@
   <?php print $head; ?>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+
 </head>
 <body class="<?php print $body_classes; ?><?php if (!empty($admin)) print ' '.admin;  ?>">
 <?php 
@@ -42,26 +43,33 @@
       <div id="page-inner" class="clearfix">
 
 
-        <<?php print $site_name_element; ?> id="site-name">
-          <a href="<?php print $base_path; ?>" title="<?php print t('Home'); ?>" rel="home">
-            <?php print $site_name; ?>
-          </a>
-        </<?php print $site_name_element; ?>>
-
         <div id="pageheader">
           <div id="pageheader-inner">
             
-            <div id="top" class="clearfix">
+              <div id="top" class="clearfix">
+                  <div id="randers-top" >
 
-              <div id="search" class="left">
-                <?php print $search ?>
+                      <div id="randers-logo" class="left">
+                      </div>
+                  </div>
+                  <div id="search-area">
+                      <div id="search" class="left">
+                          <?php print $search ?>
+                      </div>
+
+                      <div id="account" class="left">
+                          
+                         <?php if (!user_is_logged_in()) { ?>
+                            <div id="account-logintitle">
+                                 <?php  print t('Login for at se lånerstatus');?>
+                            </div>
+                          <?php } ?>
+
+                          
+                          <?php print $account; ?>
+                      </div>
+                  </div>
               </div>
-
-              <div id="account" class="left">
-                <?php print $account; ?>
-              </div>  
-
-            </div>
 
             <div id="navigation">
               <div id="navigation-inner">
@@ -71,13 +79,13 @@
               </div>
             </div>
 
-            <?php print $breadcrumb; ?>
+            
           </div>
         </div>
         
         <div id="pagebody" class="clearfix">
           <div id="pagebody-inner" class="clearfix">
-
+           <?php if(!$is_front) print $breadcrumb; ?>
             <?php if ($left) { ?>
               <div id="content-left">
                 <?php print $left; ?>
@@ -146,5 +154,11 @@
 </div>
 
 <?php print $closure; ?>
+
+  <script SRC="/scripts/include1.js"  TYPE="text/javascript"></script>
+  <script SRC="/scripts/dcs_tag.js"  TYPE="text/javascript"></script>
+  <noscript>
+   <img ALT="" BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="https://visionize10.visionize.dk/dcstdy9ylt3uwyq8cc2e7bdnk_9s8b/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2"/>
+  </noscript>
 </body>
 </html>

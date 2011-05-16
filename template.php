@@ -54,7 +54,7 @@ function dynamo_preprocess_page(&$vars){
 function dynamo_preprocess_node(&$variables) {
   // Added by mikl, since the classes coming from mothership are broken.
   $variables['classes'] .= ' ding-node';
-
+  
   // FIXME
   // kasperg: This logic does not belong in the theme layer.
   // Consider moving this to a Panels pane and place it on
@@ -69,6 +69,12 @@ function dynamo_preprocess_node(&$variables) {
  * Implementation of theme_breadcrumb().
  */
 function dynamo_breadcrumb($breadcrumb) {
+   //Added in order to display breadcrumbs on the front page. AL Randers Bibliotek
+   if (drupal_is_front_page()) {
+          $breadcrumb= array(
+            l(t('Home'), '<front>'),
+        );
+   }
   if (!empty($breadcrumb)) {
     // Remove the last, empty item from the breadcrumb trail.
     if (end($breadcrumb) == NULL) {
@@ -279,6 +285,7 @@ function dynamo_username($object) {
  * Implementation of theme_pager().
  */
 function dynamo_pager($tags = array(), $limit = 10, $element = 0, $parameters = array(), $quantity = 3) {
+
   global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
@@ -308,24 +315,25 @@ function dynamo_pager($tags = array(), $limit = 10, $element = 0, $parameters = 
   }
   // End of generation loop preparation.
 
-  $li_first = theme('pager_first', (isset($tags[0]) ? $tags[0] : t('« first')), $limit, $element, $parameters);
-  $li_previous = theme('pager_previous', (isset($tags[1]) ? $tags[1] : t('‹ previous')), $limit, $element, 1, $parameters);
-  $li_next = theme('pager_next', (isset($tags[3]) ? $tags[3] : t('next ›')), $limit, $element, 1, $parameters);
-  $li_last = theme('pager_last', (isset($tags[4]) ? $tags[4] : t('last »')), $limit, $element, $parameters);
+  $li_first = theme('pager_first', (isset($tags[0]) ? $tags[0] : t('� first')), $limit, $element, $parameters);
+  $li_previous = theme('pager_previous', (isset($tags[1]) ? $tags[1] : t('Previous')), $limit, $element, 1, $parameters);
+  if ($li_previous) {
+      $next = '|  Next';
+  } else {
+      $next = 'Next';
+  }
+  $li_next = theme('pager_next', (isset($tags[3]) ? $tags[3] : t($next)), $limit, $element, 1, $parameters);
+  $li_last = theme('pager_last', (isset($tags[4]) ? $tags[4] : t('last �')), $limit, $element, $parameters);
 
   if ($pager_total[$element] > 1) {
-    if ($li_first) {
+   /* if ($li_first) {
       $items[] = array(
         'class' => 'pager-first',
         'data' => $li_first,
       );
-    }
-    if ($li_previous) {
-      $items[] = array(
-        'class' => 'pager-previous',
-        'data' => $li_previous,
-      );
-    }
+    } */
+
+
 
     // When there is more than one page, create the pager list.
     if ($i != $pager_max) {
@@ -333,10 +341,10 @@ function dynamo_pager($tags = array(), $limit = 10, $element = 0, $parameters = 
       if ($i > 1) {
         $items[] = array(
           'class' => 'pager-ellipsis',
-          'data' => '…',
+          'data' => '�',
         );
       }
- */
+  */
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
@@ -362,27 +370,35 @@ function dynamo_pager($tags = array(), $limit = 10, $element = 0, $parameters = 
       if ($i < $pager_max) {
         $items[] = array(
           'class' => 'pager-ellipsis',
-          'data' => '…',
+          'data' => '�',
         );
       }
-       */
+      */
     }
     // End generation.
+    if ($li_previous) {
+      $items[] = array(
+        'class' => 'pager-previous',
+        'data' => $li_previous,
+      );
+    }
     if ($li_next) {
       $items[] = array(
         'class' => 'pager-next',
         'data' => $li_next,
       );
     }
-    if ($li_last) {
+
+    /*if ($li_last) {
       $items[] = array(
-        'class' => 'pager-last',
+        'class' => 'pager-last2',
         'data' => $li_last,
       );
-    }
+    } */
     return theme('item_list', $items, NULL, 'ul', array('class' => 'pager'));
   }
 }
+
 
 
 
@@ -564,21 +580,21 @@ function dynamo_table($header, $rows, $attributes = array(), $caption = NULL) {
 
 /**
  * Override mothership form element to add class to wrapper if the
- * form element has triggered a validation error.
+ * form element has triggered a validation error. 
  */
 function dynamo_form_element($element, $value) {
   // This is also used in the installer, pre-database setup.
   $t = get_t();
-
+  
   // Add an error class to the .form-item wrapper
   // Inspired by http://fourkitchens.com/blog/2009/06/10/advanced-drupal-form-theming-take-control-error-styling-form-item-error-class
   $error = '';
   $exempt_elements = array('checkbox', 'radio', 'password_confirm');
   if (dynamo_get_error($element) && !in_array($element['#type'], $exempt_elements)) {
     $error .= 'form-item-error';
-    $error .= ' form-item-error-'. $element['#type']; // Optional
+    $error .= ' form-item-error-'. $element['#type']; // Optional 
   }
-
+  
   //add a more specific form-item-$type and error state
   $output = "<div class=\"form-item form-item-" . $element['#type'] .' '.$error." \" ";
   // TODO cant this be dublicated on a page?
@@ -586,7 +602,7 @@ function dynamo_form_element($element, $value) {
   if (!empty($element['#id'])) {
     $output .= ' id="'. $element['#id'] .'-wrapper"';
   }
-
+    
   $output .= ">\n";
   $required = !empty($element['#required']) ? '<span class="form-required" title="'. $t('This field is required.') .'">*</span>' : '';
 
@@ -614,9 +630,9 @@ function dynamo_form_element($element, $value) {
 }
 
 /**
- * Overrides mothership filefield icon which in versions up to 1.2
+ * Overrides mothership filefield icon which in versions up to 1.2 
  * contains an errorneous " before the alt attribute.
- *
+ * 
  * This causes Drupal search to not index all content after the icon.
  */
 function dynamo_filefield_icon($file) {
@@ -664,8 +680,8 @@ function dynamo_checkbox($element) {
  * Overrides default date popup implementation by removing the id attribute
  * from the parent label. It generates a for="[id]" attribute refering to
  * a non-existing element. This is invalid XHTML.
- *
- * @see theme_date_popup
+ *  
+ * @see theme_date_popup 
  */
 function dynamo_date_popup($element) {
   //Remove the id causing the invalid for attribute to be generated.
@@ -707,3 +723,12 @@ function dynamo_get_error($element) {
 function dynamo_datef($date, $format, $langcode = 'da') {
   return date_format_date($date, 'custom', $format, $langcode);
 }
+
+function make_search_url ($data) {
+    foreach($data as &$element) {
+        $element = l($element, 'ting/search/'. $element);
+    }
+   return theme('item_list', $data, t('Classification'), 'span', array('class' => 'subject'));
+}
+
+

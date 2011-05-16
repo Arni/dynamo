@@ -13,7 +13,7 @@ if ($page == 0) { ?>
   <div class="picture"><?php print $list_image; ?></div>
 
   <div class="content">
-
+ 
     <div class="subject">
       <?php print return_terms_from_vocabulary($node, "1"); ?> 
     </div>
@@ -64,6 +64,7 @@ if ($page == 0) { ?>
   <div class="subject">
     <?php print return_terms_from_vocabulary($node, "1"); ?> 
   </div>
+
 
 	<?php if($node->title){	?>	
 	  <h2><?php print $title;?></h2>

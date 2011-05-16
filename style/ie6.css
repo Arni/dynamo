@@ -31,6 +31,9 @@ ul.search-results li{display:none;}
 .panel-threecol-33-34-33-stacked .panel-right {width:229px; overflow:hidden;}
 .ting-search-carousel{position:relative; left:0px;}
 
+#ting-search-tabs {display:block; margin: 0; padding: 0; border: 0; outline: 0; line-height: inherit; text-decoration: none; font-size: 100%; list-style: none; font-family: inherit; bottom: inherit; position: inherit; z-index: inherit; width:150px;}
+body.ding-ting-search #content-main .panel-twocol-left-stacked {overflow:inherit; } 
+.panel-threecol-left-stacked-right {height: 500px;}
 
 /* ___________ IE6 IFRAME FIX ________ */
 .ui-datepicker-cover {

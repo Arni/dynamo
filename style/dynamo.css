@@ -2,7 +2,7 @@
 	dynamo.css
 	widgets and elements used throughout the site
 	------------------------------------
-
+	
 	------------------------------------
 	colors:
 	------------------------------------
@@ -17,7 +17,7 @@
 
 /*--------------------------------------*/
 /*table colors */
-table thead th{background:#ddd; font-weight:bold; padding:3px; border-bottom: 1px solid #ccc;}
+table thead th{background:#ddd; font-weight:bold; padding:3px; border-bottom: 1px solid #ccc;}	
 tr.odd{background:#efefef;}
 tr.odd td{padding:5px;}
 tr.odd a{}
@@ -25,11 +25,20 @@ tr.even{}
 tr.even td{padding:5px;}
 tr.even a{}
 
+/* Statusside*/
+body.ding-status .panel-twocol-left-stacked .panel-left td.title {width: 390px;height:40px}
+body.ding-status .panel-twocol-left-stacked .panel-left td.image {width: 40px; }
+body.ding-status .panel-twocol-left-stacked .panel-left td.image img {width: 25px; }
+body.ding-status .panel-twocol-left-stacked .panel-left td.title a {color: #11a1dc; }
+body.ding-status .panel-twocol-left-stacked table.sticky-enabled {margin-bottom:30px;}
+body.ding-status .panel-twocol-left-stacked table caption {font-size:14px; line-height:20px; text-align:left; }
+
+
 /*forms and labels*/
 form{clear: both;}
 form div{position:relative }
 #search label, #account label{position:absolute; top:0; left:0; color:#000;}
-#account #edit-remember-me-wrapper label {color: #e5e5e5;}
+#account #edit-remember-me-wrapper label {color: #e5e5e5; left:155px; top:-50px; position:relative; color:#212121}
 form div.description{font-size:10px; line-height:12px; color:#999; padding:5px; width:400px;}
 
 #content form .form-item{margin:0 0 0 0; padding:10px 0; }
@@ -49,7 +58,9 @@ ul.pager li{padding:0;}
 ul.pager li{margin:0 10px 0 0;}
 
 /* pagers */
-#pager, ul.pager{height:30px; margin:0 0 20px 0; padding:0 0 0 10px; clear:both; background:transparent url(../images/bg-pager.gif) no-repeat left top; font-size:10px;}
+#pager, ul.pager{height:30px; margin:0 0 20px 0; padding:0 0 0 10px; clear:both;  font-size:10px; display: block; background-color:#E5E5E5;}
+
+#view-bottom ul.pager {display: inline;}
 /*-- search  --*/
 #pager a{margin:3px 0 0 0; cursor: pointer}
 	#pager a,#pager  a:link, #pager a:active {text-decoration: none; color:#9CB333;}
@@ -59,42 +70,49 @@ ul.pager li{margin:0 10px 0 0;}
 	#pager a.prev{background:transparent url(../images/arrow-pre.png) no-repeat left center; padding:0 0 0  5px;}
 	#pager a.next{background:transparent url(../images/arrow.png) no-repeat right center; padding:0 5px 0 0;}
 
-  #pager div.nav a,
+  #pager div.nav a, 
   #pager div.navwide a{
-    display:block;
-  }
+    display:block; color: #444444; background:none;
+  }	
 	#pager div.nav a.hidden, .pager div.nav a.hidden{display:none;}
 
-  body.page-arrangementer .panel-middle .view-event-list ul.pager li,
-	#pager div.navwide,
-  #pager div.nav,
-	ul.pager li,
-	ul.pager li.pager-next,
-	ul.pager li.pager-item,
-	ul.pager li.pager-last,
-	ul.pager li.pager-previous,
-	ul.pager li.pager-first,
-	.panel-left	ul.pager li.pager-first
-	{
-	  width:54px; height:28px; padding:3px 2px 0 2px; font-size:9px; float:left; text-align:center;
-	  background:transparent url(../images/bg-pager-link-nav.gif) no-repeat left top;
-	}
 
+	#pager div.navwide, 
+  #pager div.nav, 
+	ul.pager li,
+	ul.pager li.pager-last,
+	ul.pager li.pager-first,
+	.panel-left	ul.pager li.pager-first	
+	{
+	  width:54px; height:28px; padding:3px 2px 0 2px; font-size:9px; float:left; text-align:center; 
+	  /*background:transparent url(../images/bg-pager-link-nav.gif) no-repeat left top; // Check andre steder*/
+	}
+	
+	ul.pager li.pager-item 	{ width:10px; height:16px; padding:3px 2px 0 2px; font-size:12px; float:left; text-align:center; color:#444444; background:inherit;}
+    ul.pager li.pager-item a {padding:6px 0px; color:#444444;}
 
 	#ting-result-pager ul{display:inline}
-	#ting-result-pager ul li{width:30px; height:24px; float:left; padding:3px 2px 0 2px; text-align:center; background:transparent url(../images/bg-pager-link.gif) no-repeat left top; }
-	#ting-result-pager ul li.current,
-	.panel-left ul.pager li.pager-current{
-	  width:32px; height:28px; float:left; padding:3px 0px 0 0px;  background:transparent url(../images/bg-pager-link-active.gif) no-repeat left top;
+	#ting-result-pager ul li{width:30px; height:24px; float:left; padding:3px 2px 0 2px; text-align:center; }
+	#ting-result-pager ul li.current
+   {
+	  width:32px; height:28px; float:left; padding:3px 0px 0 0px;  
 	}
-  ul.pager li.pager-item a{padding:6px 10px;}
+	ul.pager li.pager-current {width:12px; height:16px; float:left; padding:3px 0px 0 0px; font-size:12px; background:inherit;}
+	ul.pager li.pager-current a {padding:6px 0px; color:#222222; font-weight:bold;}
+	
+	ul.pager li.pager-previous {width: 48px; height:24px; float:left; padding:3px 0px 0 0px; font-size:12px; margin-left:20px; background:inherit;}
+	ul.pager li.pager-previous a {padding:6px 0px; color:#444444;}
+	
+	ul.pager li.pager-next {width: 44px; height:24px; float:left; padding:3px 0px 0 0px; font-size:12px; background:inherit;}
+	ul.pager li.pager-next a {padding:6px 0px; color:#444444;}
+
   ul.pager li a{padding:6px 0px; color:#9CB333;}
 
 
 /* =====================================
 Panels BOX css styles
 /*--------------------------------------*/
-.ding-box-pane{width:228px; background:transparent url(../images/sprite-box.png) repeat-y 0 0; overflow:hidden;}
+.ding-box-pane{width:228px; }
 	.ding-box-pane h3{color:#050505; width:228px; padding:8px 0 4px 20px; margin:0;height:18px; font-size:11px; line-height:20px; font-weight:normal; background:transparent url(../images/sprite-box.png) no-repeat -230px -30px; overflow:hidden; text-transform: uppercase;}
 	.ding-box-pane ul{width:228px; padding:8px 0px; min-height:30px; background:transparent url(../images/sprite-box.png) no-repeat -700px bottom; overflow:hidden;}
 	.ding-box-pane ul.links{background:none;}
@@ -107,30 +125,47 @@ Panels BOX css styles
 	.ding-box-pane .meta ul li{margin:0 0 0 0px; padding:0 0 0 0px; width:200px;}
 	.ding-box-pane{font-size:11px; line-height:20px; margin:0 0 10px 0;}
 
-	.ding-box-wide{margin: 20px 0 0; width:514px; background:transparent url(../images/sprite-box.png) repeat-y -1444px 0; overflow:hidden;}
-		.ding-box-wide h3{ width:514px; font-weight:bold;padding:8px 0 4px 20px; height:16px; font-size:11px; line-height:20px;  background:transparent url(../images/sprite-box.png) no-repeat -930px -0px; overflow:hidden;}
-		.ding-box-wide ul{width:514px; padding:0px 0 8px 0; margin:0; min-height:30px; background:transparent url(../images/sprite-box.png) no-repeat -1444px bottom;  overflow:hidden;}
+	.ding-box-wide{margin: 20px 0 0;  }
+		.ding-box-wide h3{  font-weight:bold;padding:8px 0 4px 0px; height:16px; font-size:12px; line-height:20px; text-transform:uppercase; color:#212121; overflow:hidden;}
+		.ding-box-wide ul{padding:0px 0 8px 0; margin:0; min-height:30px; }
 		.ding-box-wide ul li,.ding-box-wide ul li.first{margin:0px 10px; font-size:10px; padding:2px 0 0 10px; list-style: none}
 
-	.ding-box-wide .odd{background:#f3f5f5;}
-	.ding-box-wide .even{background:#fff;}
+	.ding-box-wide .odd{}
+	.ding-box-wide .even{}
 
-	.ding-box-wide ul.item-list li {padding:2px 0 0 10px; margin:0 10px; background:#fff;}
-	.ding-box-wide ul.item-list li.odd{background:#f3f5f5;}
-	.ding-box-wide ul.item-list li.even{background:#fff;}
+	.ding-box-wide ul.item-list li {padding:2px 0 0 0px; margin:0 0px; }
+	.ding-box-wide ul.item-list li.odd{}
+	.ding-box-wide ul.item-list li.even{}
 
-	.ding-box-wide p {font-size: 10px; font-weight:bold; margin:0 10px; padding:0 10px; }
+
 
 	.ding-box-pane .odd{background:#f3f5f5;}
 	.ding-box-pane .even{background:#fff;}
 
 .ding-box-pane h2 a{font-size:11px; font-weight:bold;}
 
+.view-blog-category-list  {margin-left:12px;}
+.ding-box-pane .pane-blog_category_list-panel_pane_1  h3 {background: none #639DB0; color: #FFFFFF; font-size: 12px; font-weight:bold;}
+
+/*User Comments front page */
+.pane-comments_recent {width: 237px; border: solid 2px #ACACAC; margin-left:4px;}
+.front .ding-box-pane {width:237px;}
+.front .ding-box-pane h3{color:#FFFFFF;  padding:3px 0 0px 6px; height:23px; font-size:12px;  font-weight:bold; text-transform: uppercase; background:none; background-color:#ACACAC; width:auto;}
+.front .ding-box-pane ul{width:237px; padding:8px 0px; min-height:30px; background:none;}
+.ding-box-pane ul li{margin:0 0 0 0px; padding:0 0 0 10px; width:auto;}
+.ding-box-pane ul li.views-row-odd {background-color: #FFFFFF;}
+.ding-box-pane ul li.views-row-even {background-color: #F3F5F5;}
+
 /* box variants*/
-.pane-tagadelic-2{width:228px; padding:8px 0 4px 20px; margin:0; background:transparent url(../images/sprite-box.png) no-repeat -0px -0px; overflow:hidden;}
+.pane-tagadelic-2{width:228px; padding:8px 0 4px 20px; }
+
+
+/*Frontpage Recent Comments*/
+
+.pane-comments_recent .subject a {color: #11A1DC; text-transform:none; padding:0 0px; font-size:11px;}
 
 /* =====================================
-Campaigns
+Campaigns 
 /*--------------------------------------*/
 .campaign-text{width:228px; background:transparent url(../images/sprite-box.png) repeat-y 0px 0; overflow:hidden; margin:0 0 10px 0;}
 	.campaign-inner{width:228px; background:transparent url(../images/sprite-box.png) no-repeat -700px bottom; overflow:hidden;}
@@ -144,12 +179,14 @@ Campaigns
 				.campaign-theme-green{background:#899e99;}
 				.campaign-theme-blue{background:#006c8a;}
 
-.campaign-image{margin:10px; width:220px; overflow:hidden;}
+.campaign-image{padding:14px 0px 0px 17px; width:220px; overflow:hidden;}
+.pane-relevant_campaigns {padding-bottom:18px}
+.pane-relevant_campaigns h3{background-color:#639DB0; padding:5px 0 0 10px;  font-size:12px; text-transform: uppercase; height:23px; font-weight:bold; color:#FFFFFF; margin-bottom: 10px;}
 
 /**/
 .view-user-comments-list .subject a,
 .view-user-comments-list .subject a:link,
-.view-user-comments-list .subject a:visited,
+.view-user-comments-list .subject a:visited, 
 .view-user-comments-list .subject a:active{
   background:none; color:#9CB333; text-transform: none; font-size:10px;
 }
@@ -165,17 +202,23 @@ basic elements
 /*--------------------------------------*/
 	.node .content p{}
 	.node .content img{margin:0 10px 10px 0; text-align:center; color:#aaa; background:#eee;}
+	.node .content img.image-left {float:left; margin:0 15px 15px 0;}
+	img.image-left {float:left; margin:0 15px 15px 0;}
+	
 	.node .content ul{margin:0 0 15px 20px; padding:0 0 10px 0; clear:both;}
 	.node .content ul li{list-style: disc outside url();background:none; padding:5px 0; }
 	.node .content a,.node .content a:link, .node .content a:visited,.node .content a:active {text-decoration: none;}
 	.node .content a:hover,.node .content a:focus {text-decoration: underline; background:#C9D3D7; }
-	.subject a,.subject a:link, .subject a:visited,.subject a:active {text-decoration: none; color:#fff;}
+	.subject a,.subject a:link, .subject a:visited,.subject a:active {text-decoration: none; }	
 
 	/*i know its evil to use important and i feel very dirty ...*/
 	.node .content table{width:99% !important; margin:10px 0 !important; border: 1px solid #eee;}
 	.node .content table td{border-bottom: 1px solid #eee; border-right: 1px solid #ddd; padding:2px 4px; background:#FBFBFB;}
 
 	.node .content hr{width:100%; height:1px; border: 0; background-color: #ddd; margin:9px 0;}
+	
+	.pane-node_content .node .content table {border: none;}
+	.pane-node_content .node .content table td {border-right: none; border-bottom:none; background-color:inherit;}
 
 /*node + list*/
 	.node .meta ul{margin:0 0 0 10px;}
@@ -184,11 +227,11 @@ basic elements
 	.meta ul li {padding:0 5px 0 0;}
 	.view .meta ul li {padding:0 5px 0 0; background:none;}
 	.meta div.taxonomy{display:inline;}
-	.node .taxonomy{padding:10px 0;}
+	.node .taxonomy{padding:10px 0; color: #212121; font-size:12px; font-weight:bold; text-transform:uppercase;}
 	.node .taxonomy ul{margin:0;}
 	.node .taxonomy ul.links li{padding:0 5px 0 0;}
-	.node-page .content{margin:10px 0 0 0;}
-	.more-link a, a.more-link {background:transparent url(../images/arrow.png) no-repeat right center; padding:0 5px 0 0; }
+	.node-page .content{margin:10px 0 0 0;}		
+	.more-link a, a.more-link {background:transparent url(../images/arrow.png) no-repeat right center; padding:0 12px 0 0; }
 
 
 	.node-teaser .taxonomy{padding:10px 0;}
@@ -204,7 +247,8 @@ div.more-link{padding:0 20px 0 0; }
 /* frontpage
 --------------------------------------*/
 /*carousel*/
-.ting-search-carousel{position:relative; left:-21px; width:961px;}
+.ting-search-carousel{position:relative;  width:960px; } /* background-image: url('../images/randers/carusell.png'); height: 235px}*/
+.ting-search-carousel .search-controller  {height:25px; background-color:#EEEEEE;} /*Hack mens vi venter på ting*/ 
 
   .ting-search-carousel .search-controller li.active a {color:#fff;}
   .jcarousel-skin-ting-search-carousel .jcarousel-clip-horizontal {width:666px;}
@@ -213,11 +257,34 @@ div.more-link{padding:0 20px 0 0; }
   .ting-search-carousel .subtitle {font-size:42px; font-weight: normal; margin:10px 0 0px 40px; float:left; overflow:hidden; width:200px;}
   .ting-search-carousel .search-controller li.active a {color:#fff;}
 
-.view-footer{margin:10px 0 10px 20px; clear:both;;}
-.view .feed-icon{margin:0 0 0 10px;}
+.view-footer{margin:10px 0 10px 20px; clear:both; display:inline;}
+.view .feed-icon{margin-left:10px; display:inline-block; }
+.view .feed-icon a {color:#444444; font-size: 12px;}
+
 .view-empty{margin:20px 0; clear:both; font-weight:bold;}
 .panel-middle .view-empty{margin:20px 0 20px 20px;}
 .panel .view-event-list .view-empty{margin:20px 0 20px 20px;}
+
+.pane-block-5 h3{background-color:#639DB0; padding:5px 0 0 10px;  font-size:12px; text-transform: uppercase; height:23px; font-weight:bold; color:#FFFFFF; margin-bottom: 10px;}
+.pane-block-5 #frontpage-netbiblioteket h3 {text-transform:none;}
+.pane-block-5{}
+.panel-region-separator {background-color:#BBBBBB;}
+
+.pane-block-4 {padding-top:10px;}
+
+
+.front .view-article-list div.picture {float:left;}
+.front .view-article-list #blogdata {margin-left:110px;}
+                                     
+ /*Infoboxes*/
+ .grey-infobox h3 {font-size:12px; text-transform: uppercase; height:23px; font-weight:bold; color:#FFFFFF; background-color:#ACACAC; padding: 5px 0 0 6px;} 
+ .grey-infobox a img {margin-left: 16px;} 
+ 
+ .blue-infobox h3{background-color:#639DB0; padding:5px 0 0 10px;  font-size:12px; text-transform: uppercase; height:23px; font-weight:bold; color:#FFFFFF; margin-bottom: 10px;}
+ .blue-infobox p {margin-left: 17px;} 
+ 
+ .ding-front-panel .pane-block-5 img {margin-left: 10px;}                                  
+                                     
 
 
 
